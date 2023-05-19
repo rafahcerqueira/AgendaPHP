@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #8000FF;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 3.5rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem;
+    height: 40rem;
+    box-shadow: 0px 0px 53px 0px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: 2rem;
+}
+
+.table-content {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form.form-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contacts-table {
+    margin-top: 2rem;
+    border-collapse: collapse;
+    width: 40rem;
+}
+
+.contacts-table th,
+.contacts-table td {
+    padding: 8px;
+    color: white;
+}
+
+.contacts-table th {
+    background-color: #6a0dad;
+}
+
+.contacts-table td {
+    text-align: center;
+}
+
+.btn {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+button {
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+img {
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.btn-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 10px;
+    margin-top: 5rem;
+    width: 7rem;
+    height: 2rem;
+    text-decoration: none;
+    font-size: 16px;
+    background-color: #fff;
+    color: #6a0dad;
+}
+
+a {
+    text-decoration: none;
+}
