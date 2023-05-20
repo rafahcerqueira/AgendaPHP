@@ -13,7 +13,7 @@
     <div class="content">
         <h1>Consultar Contato</h1>
 
-        <form class="form-content" method="post">
+        <form action="../Forms/processAllForms.php" class="form-content" method="post">
             <div class="">
                 <div class="">
                     <div class="">
@@ -26,7 +26,7 @@
                 <a href="homePage.php">
                     <button type="button" class="btn-back">Voltar</button>
                 </a>
-                <button type="button" class="btn-include">Consultar</button>
+                <button type="submit" name="consulta" class="btn-include">Consultar</button>
             </div>
         </form>
     </div>

@@ -13,14 +13,14 @@
     <div class="content">
         <h1>Adicionar Novo Contato</h1>
 
-        <form class="form-content" method="post">
-            <div class="">
-                <div class="">
-                    <div class="">
-                        <input type="text" class="" placeholder="Nome">
+        <form action="../Forms/processAllForms.php" class="form-content" method="post">
+            <div>
+                <div>
+                    <div>
+                        <input type="text" name="nome" placeholder="Nome">
                     </div>
                     <div class="3">
-                        <input type="text" class="" placeholder="Telefone">
+                        <input type="text" name="telefone" placeholder="Telefone">
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                 <a href="homePage.php">
                     <button type="button" class="btn-back">Voltar</button>
                 </a>
-                <button type="button" class="btn-include">Adicionar</button>
+                <button type="submit" name="inserir" class="btn-include">Adicionar</button>
             </div>
         </form>
     </div>
