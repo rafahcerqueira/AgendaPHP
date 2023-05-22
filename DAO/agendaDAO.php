@@ -25,9 +25,9 @@ class AgendaDAO {
     
     public function consultarContato($id_contato) {
         try{
-            $sql = "SELECT * FROM contatos WHERE id LIKE :id_contato";
+            $sql = "SELECT * FROM contatos WHERE id = :id_contato";
             $stmt = $this->conexao->prepare($sql);
-            $stmt->execute(['id_contato' => '%' . $id_contato . '%']);
+            $stmt->execute(['id_contato' => $id_contato]);
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
             echo "Erro ao consultar contato: " . $e->getMessage();

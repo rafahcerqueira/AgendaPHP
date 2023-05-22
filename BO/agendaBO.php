@@ -1,7 +1,4 @@
 <?php
-
-use JetBrains\PhpStorm\Internal\PhpStormStubsElementAvailable;
-
 require_once '../DAO/agendaDAO.php';
 
 class AgendaBO {
@@ -17,7 +14,7 @@ class AgendaBO {
     }
     
     public function consultarContato($id_contato) {
-        return $this->agendaDAO->consultarContato(strtoupper($id_contato));
+        return $this->agendaDAO->consultarContato($id_contato);
     }
     
     public function excluirContato($id) {

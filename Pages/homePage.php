@@ -1,3 +1,25 @@
+<?php
+    if (isset($_COOKIE['ultimo_acesso'])) {
+        $ultimoAcesso = $_COOKIE['ultimo_acesso'];
+        $tempoDecorrido = time() - strtotime($ultimoAcesso); 
+        $tempoLimite = 90; 
+        
+        if ($tempoDecorrido > $tempoLimite) { 
+            $cores = array('#8000FF', '#121212', '#A875FF');
+            $corFundo = $cores[array_rand($cores)];
+            
+            setcookie('ultimo_acesso', date('Y-m-d H:i:s'), time()+3600);
+        } else {
+            $corFundo = $_COOKIE['cor_fundo'];
+        }
+    } else {
+        $corFundo = '#8000FF'; 
+        setcookie('ultimo_acesso', date('Y-m-d H:i:s'), time()+3600);
+    }
+
+    setcookie('cor_fundo', $corFundo, time()+3600);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -9,7 +31,7 @@
 </head>
 <body>
     <div class="content">
-        <div class="content-left">
+        <div class="content-left" style="background-color: <?php echo $corFundo; ?>">
             <h1>Menu Principal</h1>
             <div class="btn">
                 <a href="./formInsert.php"><button>INCLUIR</button></a>

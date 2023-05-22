@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Styles/global.css">
+    <link rel="stylesheet" href="../Styles/result.css">
     <title>AGENDA</title>
 </head>
 
@@ -17,10 +18,13 @@
             <div>
                 <div>
                     <div>
-                        <input type="text" name="nome" placeholder="Nome">
+                        <input autocomplete="off" minlength="2" type="text" name="nome" placeholder="Nome" required>
                     </div>
-                    <div class="3">
-                        <input type="text" name="telefone" placeholder="Telefone">
+                    <div>
+                        <input autocomplete="off" minlength="11" type="tel" name="telefone" placeholder="Telefone" required>
+                    </div>
+                    <div>
+                        <input minlength="11" type="" name="teste" placeholder="Teste" required>
                     </div>
                 </div>
             </div>

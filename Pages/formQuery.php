@@ -10,10 +10,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Styles/global.css">
-    <link rel="stylesheet" href="../Styles/formQuery.css">
+    <link rel="stylesheet" href="../Styles/result.css">
     <title>AGENDA</title>
 </head>
-
 <body>
     <div class="content">
         <h1>Consultar Contato</h1>
@@ -50,7 +49,7 @@
                             echo "<br>";
                         }
                     } else 
-                        echo "Nenhum contato encontrado.";
+                        echo "<span>Nenhum contato encontrado.</span>";
 
                     unset($_SESSION['contacts']);
                 }            
@@ -58,5 +57,4 @@
         </div>
     </div>
 </body>
-
 </html>
