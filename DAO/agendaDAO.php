@@ -23,11 +23,11 @@ class AgendaDAO {
         }
     }
     
-    public function consultarContato($nome) {
+    public function consultarContato($id_contato) {
         try{
-            $sql = "SELECT * FROM contatos WHERE UPPER(nome) LIKE :nome";
+            $sql = "SELECT * FROM contatos WHERE id LIKE :id_contato";
             $stmt = $this->conexao->prepare($sql);
-            $stmt->execute([':nome' => '%' . $nome . '%']);
+            $stmt->execute(['id_contato' => '%' . $id_contato . '%']);
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
             echo "Erro ao consultar contato: " . $e->getMessage();
@@ -35,7 +35,7 @@ class AgendaDAO {
     }
     
     public function excluirContato($id) {
-        try{
+        try {
             $sql = "DELETE FROM contatos WHERE id = :id";
             $this->conexao->prepare($sql)->execute([':id' => $id]);
         } catch (PDOException $e) {
@@ -43,14 +43,15 @@ class AgendaDAO {
         }
     }
     
+    
     public function atualizarContato($id, $nome, $telefone) {
         try {
             $sql = "UPDATE contatos SET nome = :nome, telefone = :telefone WHERE id = :id";
             $this->conexao->prepare($sql)->execute([
-            ':id' => $id,
-            ':nome' => $nome,
-            ':telefone' => $telefone
-        ]);
+                ':id' => $id,
+                ':nome' => $nome,
+                ':telefone' => $telefone
+            ]);
         } catch (PDOException $e) {
             echo "Erro ao atualizar contato: " . $e->getMessage();
         }        

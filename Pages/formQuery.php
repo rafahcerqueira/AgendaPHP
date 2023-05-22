@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR" translate="no">
 
@@ -6,6 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Styles/global.css">
+    <link rel="stylesheet" href="../Styles/formQuery.css">
     <title>AGENDA</title>
 </head>
 
@@ -13,22 +18,44 @@
     <div class="content">
         <h1>Consultar Contato</h1>
 
-        <form action="../Forms/processAllForms.php" class="form-content" method="post">
+        <form action="../Forms/processAllForms.php" class="form-content" method="GET">
             <div class="">
                 <div class="">
                     <div class="">
-                        <input type="text" class="" placeholder="Id do contato:">
+                        <input type="text" name="id_contato" placeholder="Id do contato:">
                     </div>
                 </div>
             </div>
 
-            <div class="btn">
+            <div class="btn">   
                 <a href="homePage.php">
                     <button type="button" class="btn-back">Voltar</button>
                 </a>
                 <button type="submit" name="consulta" class="btn-include">Consultar</button>
             </div>
         </form>
+
+        <div class="result">
+            <?php
+                if (isset($_SESSION['contacts'])) {
+                    $contacts = $_SESSION['contacts'];
+
+                    if (!empty($contacts)) {
+                        echo "<h2>Resultado da consulta:</h2><br>";
+
+                        foreach ($contacts as $contact) {
+                            echo "<p><strong>Id:</strong> " . $contact['id'] . "</p>";
+                            echo "<p><strong>Nome:</strong> " . $contact['nome'] . "</p>";
+                            echo "<p><strong>Telefone:</strong> " . $contact['telefone'] . "</p>";
+                            echo "<br>";
+                        }
+                    } else 
+                        echo "Nenhum contato encontrado.";
+
+                    unset($_SESSION['contacts']);
+                }            
+            ?>
+        </div>
     </div>
 </body>
 

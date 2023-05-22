@@ -16,8 +16,8 @@ class AgendaBO {
         $this->agendaDAO->inserirContato(strtoupper($nome), $telefone); //Colocar validação de telefone
     }
     
-    public function consultarContato($nome) {
-        return $this->agendaDAO->consultarContato(strtoupper($nome));
+    public function consultarContato($id_contato) {
+        return $this->agendaDAO->consultarContato(strtoupper($id_contato));
     }
     
     public function excluirContato($id) {
