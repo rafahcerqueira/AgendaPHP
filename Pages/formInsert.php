@@ -23,9 +23,6 @@
                     <div>
                         <input autocomplete="off" minlength="11" type="tel" name="telefone" placeholder="Telefone" required>
                     </div>
-                    <div>
-                        <input minlength="11" type="" name="teste" placeholder="Teste" required>
-                    </div>
                 </div>
             </div>
 
