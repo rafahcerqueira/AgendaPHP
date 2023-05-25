@@ -2,7 +2,7 @@
     if (isset($_COOKIE['ultimo_acesso'])) {
         $ultimoAcesso = $_COOKIE['ultimo_acesso'];
         $tempoDecorrido = time() - strtotime($ultimoAcesso); 
-        $tempoLimite = 1; 
+        $tempoLimite = 90; 
         
         if ($tempoDecorrido > $tempoLimite) { 
             $cores = array('#8000FF', '#121212', '#A875FF');
