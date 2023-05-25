@@ -30,10 +30,10 @@
             </div>
 
             <div class="btn">   
-                <a href="homePage.php">
+                <a href="homePageDefault.php">
                     <button type="button" class="btn-back">Voltar</button>
                 </a>
-                <button type="submit" name="consulta" class="btn-include">Consultar</button>
+                <button type="submit" name="consultaPadrao" class="btn-include">Consultar</button>
             </div>
         </form>
 

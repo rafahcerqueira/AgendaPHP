@@ -24,5 +24,9 @@
         public function atualizarContato($id, $nome, $telefone) {
             $this->agendaDAO->atualizarContato($id, strtoupper($nome), $telefone);
         }
+
+        // public function login($usuario, $senha) {
+        //     $this->agendaDAO->login($usuario, $senha);
+        // }
     }
 ?>

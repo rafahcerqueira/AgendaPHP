@@ -16,16 +16,34 @@
         $contacts = $agendaBO->consultarContato($_GET['id_contato']);
         $_SESSION['contacts'] = $contacts; // Armazena os contatos na sessão
         header("Location: ../Pages/formQuery.php");
-    }    
+    }   
+    
+    if (isset($_GET['consultaPadrao'])) {
+        $contacts = $agendaBO->consultarContato($_GET['id_contato']);
+        $_SESSION['contacts'] = $contacts; // Armazena os contatos na sessão
+        header("Location: ../Pages/formQueryDefault.php");
+    } 
         
     if (isset($_POST['atualizar']) && isset($_POST['id_contato'])){
         // Chama o método atualizarContato da classe AgendaBO passando os valores do formulário
         $agendaBO->atualizarContato($_POST['id_contato'], $_POST['nome'], $_POST['telefone']);
-        header("Location: ../Pages/formEdit.php");
+        header("Location: ../Pages/formEdit.php"); 
     }
 
     if (isset($_POST['excluir']) && isset($_POST['id_contato'])) {
         $agendaBO->excluirContato($_POST['id_contato']);
         header("Location: ../Pages/formEdit.php");
+    }
+
+    if (isset($_POST['usuario']) && isset($_POST['senha'])) {
+        $_SESSION['perfil'] = $_POST['usuario'];
+
+        $_SERVER['usuario'] = $_POST['usuario'];
+        $_SERVER['senha'] = $_POST['senha'];
+
+        if ($_SERVER['usuario'] == 'admin' && $_SERVER['senha'] == 'root')
+            header("Location: ../Pages/homePage.php");
+        else
+            header("Location: ../Pages/homePageDefault.php");
     }
 ?>

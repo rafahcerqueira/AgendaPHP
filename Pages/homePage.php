@@ -1,4 +1,9 @@
 <?php
+    session_start();
+
+    if (!isset($_SESSION['perfil']))
+        header("Location: .././index.php");
+
     if (isset($_COOKIE['ultimo_acesso'])) {
         $ultimoAcesso = $_COOKIE['ultimo_acesso'];
         $tempoDecorrido = time() - strtotime($ultimoAcesso); 
